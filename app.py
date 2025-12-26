@@ -7,7 +7,7 @@ from analysis import load_data, MA, plot_voltage, peak, low, below_k, downslopeA
 st.set_page_config(page_title="Voltage Analysis", layout="wide")
 
 st.title("Voltage Time-Series Analysis")
-st.write("Greencel Assignment")
+st.write("Green Mobility Assignment")
 
 df = load_data()
 df = MA(df)
