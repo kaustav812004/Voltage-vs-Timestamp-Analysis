@@ -46,3 +46,20 @@ def downslopeAccelerate(df):
     slope_change = slope.diff()
     down_acc = df[(slope < 0) & (slope_change < 0)][['Timestamp']]
     return down_acc['Timestamp']
+
+# def main():
+#     df = load_data()
+#     df = MA(df)
+#     plot_voltage(df, output_path="outputs/plots")
+#     peak_df = peak(df)
+#     low_df = low(df)
+#     peak_df.to_csv('outputs/tables/peaks.csv', index=False)
+#     low_df.to_csv('outputs/tables/lows.csv', index=False)
+#     below_20_df = below_k(df, 100, 'outputs/tables/below_20.csv')
+#     below_20_df.to_csv('outputs/tables/below_20.csv', index=False)
+#     down_timestamp = downslopeAccelerate(df)
+#     print("Downward Accelerating Timestamps:")
+#     print(down_timestamp)
+
+# if __name__ == "__main__":
+#     main()
