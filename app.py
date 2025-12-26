@@ -36,7 +36,7 @@ with col2:
     st.dataframe(low_df)
 
 st.subheader("Values Below Threshold")
-threshold = st.number_input("Set Threshold Value:", value=20)
+threshold = st.number_input("Set Threshold Value:", value=100)
 below_df = below_k(df, threshold, None)
 st.dataframe(below_df)
 
