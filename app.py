@@ -42,5 +42,5 @@ st.dataframe(below_df)
 
 st.subheader("Timestamps with Downward Accelerating Values")
 down_timestamp = downslopeAccelerate(df)
-st.write("Timestamps wehere downward acceleration occurs:")
+st.write("Timestamps where downward acceleration occurs:")
 st.dataframe(down_timestamp)
