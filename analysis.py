@@ -9,6 +9,7 @@ def load_data():
     return df
 
 def MA(df):
+    df["MA_5"] = df["Values"].rolling(5).mean()
     df["MA_1000"] = df["Values"].rolling(1000).mean()
     df["MA_5000"] = df["Values"].rolling(5000).mean()
     return df
@@ -16,12 +17,13 @@ def MA(df):
 def plot_voltage(df, output_path="outputs/plots"):
     plt.figure(figsize=(12, 6))
     plt.plot(df["Timestamp"], df["Values"], color='blue')
+    plt.plot(df["Timestamp"], df["MA_5"], color='yellow')
     plt.plot(df["Timestamp"], df["MA_1000"], color='red')
     plt.plot(df["Timestamp"], df["MA_5000"], color='green')
     plt.xlabel("Timestamp")
     plt.ylabel("Voltage")
     plt.title("Values with 1000 and 5000 Value Moving Averages")
-    plt.legend(["Values", "MA 1000", "MA 5000"])
+    plt.legend(["Values", "MA 5", "MA 1000", "MA 5000"])
     plt.tight_layout()
     plt.savefig(f"{output_path}/value_ma_plot.png")
     plt.show()
