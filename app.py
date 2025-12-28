@@ -16,11 +16,12 @@ st.subheader("Voltage with Moving Averages")
 
 fig, ax = plt.subplots(figsize=(12, 6))
 ax.plot(df["Timestamp"], df["Values"], label = "Values", color='blue')
+ax.plot(df["Timestamp"], df["MA_5"], label = "MA 5", color='yellow')
 ax.plot(df["Timestamp"], df["MA_1000"], label = "MA 1000", color='red')
 ax.plot(df["Timestamp"], df["MA_5000"], label = "MA 5000", color='green')
 ax.set_xlabel("Timestamp")
 ax.set_ylabel("Voltage")
-ax.set_title("Values with 1000 and 5000 Value Moving Averages")
+ax.set_title("Values with 5, 1000 and 5000 Value Moving Averages")
 ax.legend()
 st.pyplot(fig)
 
